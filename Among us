@@ -1,0 +1,245 @@
+from time import sleep
+
+
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+
+from sys import exit
+
+    
+        
+def prompt1(): 
+       print("")
+       print('Anyways! What is your reason for using this program? \n \n -I am bored \n -I am lonely \n')     
+       b = ('I am bored')
+       c = ('I am lonely')
+       d = input('Response: ')
+       #checker
+       if d == b:
+           prompt2()
+       elif d == c:
+           prompt2b()
+       else:
+           print('That is not a correct input, please follow basic instructions. \n')
+           prompt1()
+           
+def prompt2():
+    print("")
+    print('Ok... so you just... have no hobbies?? Couldn\'t you be doing work? Learning quantum mechanics? Doing something with your life? \n \n -Uncalled for. \n -I\'m sorry \n')    
+    b = ('Uncalled for.')
+    c = ('I\'m sorry')
+    d = input('Response: ')
+    #checker
+    if d == b:
+        prompt3()
+    elif d == c:
+        prompt3b()
+    else:
+        print('That is not a correct input, please follow basic instructions. \n')
+        prompt2()
+    
+def prompt2b():
+    print("")
+    print('Wow... Really honest, aren\'t you! Some things can be kept to yourself you know! I don\'t need to hear about what a loser you are! You are ruining the mood! \n \n -I\'m sorry \n -Who hurt you? \n')  
+    b = ('I\'m sorry')
+    c = ('Who hurt you?')
+    d = input('Response: ')
+    #checker
+    if d == c:
+        prompt3()
+    elif d == b:
+        prompt3b()
+    else:
+        print('That is not a correct input, please follow basic instructions. \n')
+        prompt2b()
+
+def prompt3(): #Converges the 2 different routes; user is asked indoor or outdoor no matter what
+    print("")
+    print('Oh boo hoo your feelings are hurt because I called you a loser. Get over it, priss, or go cry to someone who cares.')
+    sleep(2)
+    print('\nReguardless of your complete insecurity, do you prefer outdoor or indoor activities? \n \n -Indoor \n -Outdoor \n')    
+    b = ('Indoor')
+    c = ('Outdoor')
+    d = input('Response: ')
+    #checker
+    if d == b:
+        prompt4()
+    elif d == c:
+        prompt4b()
+    else:
+        print('That is not a correct input, please follow basic instructions. \n')
+        prompt3()
+        
+        
+def prompt3b(): #Converges the 2 different routes; user is asked indoor or outdoor no matter what
+    print("")
+    print('Yeah, as you should be for wasting my time, which I\'ve come to understand is more valuable than yours. Weirdo.')
+    sleep(2)
+    print('\nThough I appreciate your ultimatley meaningless apology. Anyways... do you prefer outdoor or indoor activities?  \n \n -Indoor \n -Outdoor \n')    
+    b = ('Indoor')
+    c = ('Outdoor')
+    d = input('Response: ')
+    #checker
+    if d == b:
+        prompt4()
+    elif d == c:
+        prompt4b() 
+    else:
+        print('That is not a correct input, please follow basic instructions. \n')
+        prompt3b()
+        
+def prompt4():
+    print("")
+    print('Ooooookay wooowww please go touch some grass! How\'s that vitamin D deficiency going for you!! What do you, like, just sit around watching TV? You like cartoons or something? \n \n -Yes \n -No \n')    
+    b = ('Yes')
+    c = ('No')
+    d = input('Response: ')
+    #checker
+    if d == b:
+        prompt6()
+    elif d == c:
+        prompt6()
+    else:
+        print('That is not a correct input, please follow basic instructions. \n')
+        prompt4()
+        
+def prompt4b():
+    print("")
+    print('WOOOOWWWWW ok ALL HAIL THE OUTDOORS PERSON!! O HIGH AND MIGHTY TEACH THE INDOOR PEASANTS YOUR WAYS!! How\'s that superiority complex going for you?? Why subject yourself to bug bites, unstable temperatures and misery in general?? \n \n -It\'s good for you \n -It\'s fun \n')
+    b = ('It\'s good for you')
+    c = ('It\'s fun')
+    d = input('Response: ')
+    #checker
+    if d == b:
+        prompt6()
+    elif d == c:
+        prompt6()
+    else:
+        print('That is not a correct input, please follow basic instructions. \n')
+        prompt4b()
+
+#This is where prompt 5 and prompt 5b would be, but they are both called in from prompt5.py
+
+def prompt6(): #Program completely converges here, reguardless of all choices/actions
+    print('\nI don\'t even know if I wanna keep haivng a conversation with you. I honestly loathe you more the more I get to know you. Do you wanna like... play a game or something? \n \n -Yes \n -No \n')  
+    b = ('Yes')
+    c = ('No')
+    d = input('Response: ')
+    #checker
+    if d == b:
+        promptgame()
+    elif d == c:
+        promptforce()
+    else:
+        print('That is not a correct input, please follow basic instructions. \n')
+        prompt6()
+        
+        
+def promptforce(): #Forces user to play the game
+    lst = ["please", "please", "please", "please", "please", "please", "I'm begging please", "Your mother doesn't love you", "Your mother loves me more than you", "Yeah I said that", "Play the game and prove me wrong", "please"]
+    print('\nplease \n')
+    d = input('Response: ')
+    if d == ('Yes'):
+        promptgame()
+    else:
+        while d != ('Yes'): 
+            for x in lst: #Runs through list; Nice easter egg for those who really do not want to play the game
+                print(f'\n{x}\n')
+                d = input('Response: ')
+                
+                if d == ('Yes'):
+                    break
+                    promptgame()
+            
+            
+
+        
+def promptgame(): #Final prompt, essentially kicks user out of program unless they know calculus 3
+    print('\n \nAlright! It is a simple game, really easy! All you do is answer simple math questions! 3rd grade level max! There\'s 4 total, and if you get all of them right, I\'ll give you a reward! Though it will be free response \n')
+    print('Got it? First question! \n \n 2 + 2 \n')
+    d = input('Response: ')
+    if d == ('4'):
+        print('Correct! Wow, excellent job! On to the next question! \n \n 4 + 4 \n')
+        e = input('Response: ')
+        if e == ('8'):
+            print('Wow! That is so impressive! Excellent job! 3rd question! \n \n Convert the equation written in Cylindrical coordinates into an equation in Cartesian coordinates.\n 4sin(θ)−2cos(θ)=r/z \n') #This is a calculus 3 problem; User is not meant to get it right but it does have an answer
+            f = input('Response: ')
+            if f == ('4y-2x=(x^2+y^2)/z'): 
+                print('...')
+                sleep(2)
+                print('\n...wow...I uh... I put that in there to uh... for you not to uhh... get that right... erm... this is awkward... final question ig... not math based but idc anymore. \n \n Is American Psycho the best movie of all time? \n ')
+                g = input('Response: ')
+                if g == ('Yes'):
+                    print('The only good ending. You\'ve earned my respect. Stan Seth Macfarlane and we can be best friends. Love you <3')
+                    exit()
+                else:
+                    print('.')
+                    sleep(2)
+                    print('You\'re dead to me.')
+                    sleep(2)
+                    exit()
+            else:
+                print('.')
+                sleep(2)
+                print('ಠ_ಠ')
+                sleep(2)
+                print('You keep me up at night. I\'m nice and give you a fair, and even fun little easy quiz and you have the audacity to throw my kindness back in my face. Enough.\nYou are either entitled enough to attempt to tick me off on purpose or just a plain bozo.\nQuite frankly, I don\'t even know which one is worse at this point. Goodbye forever. Please never return.')
+                sleep(6)
+                exit()
+                
+        else:
+            print('.')
+            sleep(2)
+            print('.......')
+            sleep(2)
+            print('I would have been less offended if you got the first question wrong.')
+            sleep(2)
+            exit()
+    else:
+        print('.')
+        sleep(2)
+        print('.......')
+        sleep(2)
+        print('You\'re not even worth it')
+        sleep(2)
+        exit()
+    
+    
+    
+    
+    
+def main():
+    name = input('Hello user! I am a program for all your time killing needs! I\'ll ask you some questions about yourself and we\'ll get to know each other very well! \n \n Please enter your name! ')
+    print(f'\n{name}... That is... definitley a name! I\'m sure we\'ll have a great time together anyways... uh...')
+    sleep(2)
+    print(f'"{name}."')
+    sleep(1)
+    print('To use, just respond to the prompt using 1 of the 2 responses given. Capitilization and punctuation matters; type in the response exactly how it is shown.')
+    
+    prompt1()
+    
+    
+#Will open an image with the user's name on an nerd emoji
+    img = Image.open('nerd.png')
+    I1 = ImageDraw.Draw(img)
+    myFont = ImageFont.truetype("arial.ttf", 65)
+    I1.text((10, 10), (f'{name}:'), font=myFont, fill =(255, 0, 0))
+    img.show()
+    img.save("nerd2.png")
+   
+#Runs prompt 6 after the image is edited and shown     
+    prompt6()
+
+#Runs the game once the user actually inputs "Yes" if they did not the first time
+    promptgame()
+    
+    print('End')
+    
+    
+    
+    
+    
+    
+if __name__ == '__main__':
+    main()
